@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMYK Color Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-container">
+      <h1>CMYK Color Converter</h1>
+      <div class="top-toggles">
+        <div class="dark-mode-container">
+          <span class="toggle-label">Dark Mode</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="cmyk-mode-container">
+          <span class="toggle-label">CMYK Mode</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="cmykModeToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card input-section">
+      <div class="input-group">
+        <div class="color-picker-wrapper">
+          <div id="colorPreview" class="color-preview"></div>
+          <input type="color" id="colorPicker">
+        </div>
+        <div class="input-container">
+          <label for="hexInput">HEX Color</label>
+          <input type="text" id="hexInput" maxlength="6" placeholder="Enter 6-digit HEX (no #)" 
+                 autocomplete="off" autocapitalize="characters">
+          <div id="errorMessage" class="error-message"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-row">
+      <button id="resetBtn" class="btn btn-reset">Reset</button>
+    </div>
+
+    <div class="preview-section">
+      <div class="preview-box card">
+        <h3>Original Color</h3>
+        <div id="originalColorBox" class="color-box"></div>
+        <div id="originalHex" class="color-data">HEX: #000000</div>
+        <div id="originalRgb" class="color-data">RGB: 0, 0, 0</div>
+      </div>
+      <div class="preview-box card">
+        <h3>Simulated CMYK</h3>
+        <div id="cmykColorBox" class="color-box"></div>
+        <div id="cmykHex" class="color-data">HEX: #000000</div>
+        <div id="cmykRgb" class="color-data">RGB: 0, 0, 0</div>
+        <div id="cmykValues" class="color-data">CMYK: 0%, 0%, 0%, 100%</div>
+      </div>
+    </div>
+
+    <h3>Generated Shades</h3>
+    <div class="shade-section">
+      <div id="shade1" class="shade-box card">
+        <div class="color-box"></div>
+        <div class="color-data hex">HEX: #000000</div>
+        <div class="color-data cmyk">CMYK: 0%, 0%, 0%, 100%</div>
+      </div>
+      <div id="shade2" class="shade-box card">
+        <div class="color-box"></div>
+        <div class="color-data hex">HEX: #000000</div>
+        <div class="color-data cmyk">CMYK: 0%, 0%, 0%, 100%</div>
+      </div>
+      <div id="shade3" class="shade-box card">
+        <div class="color-box"></div>
+        <div class="color-data hex">HEX: #000000</div>
+        <div class="color-data cmyk">CMYK: 0%, 0%, 0%, 100%</div>
+      </div>
+    </div>
+
+    <button id="copyHexBtn" class="btn copy-btn">Copy HEX Values</button>
+
+    <div class="spectrum-container card">
+      <div class="spectrum-label">Color Spectrum</div>
+      <div id="spectrumBar" class="spectrum-bar"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
